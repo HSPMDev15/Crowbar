@@ -262,16 +262,19 @@ Public Class ViewUserControl
 			'Me.InfoRichTextBox.AppendText(line + vbCr)
 			'Me.AppSettingDataViewerIsRunning = True
 			Me.MessageTextBox.Text = ""
-			Me.MessageTextBox.AppendText(line + vbCrLf)
+			Me.MessageTextBox.QueueAppendText(line + vbCrLf)
 		ElseIf e.ProgressPercentage = 1 Then
-			Me.InfoRichTextBox.AppendText(line + vbCr)
+			Me.InfoRichTextBox.QueueAppendText(line + vbCr)
 		ElseIf e.ProgressPercentage = 100 Then
 			'Me.InfoRichTextBox.AppendText(line + vbCr)
-			Me.MessageTextBox.AppendText(line + vbCrLf)
+			Me.MessageTextBox.QueueAppendText(line + vbCrLf)
 		End If
 	End Sub
 
 	Private Sub DataViewerBackgroundWorker_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs)
+		Me.InfoRichTextBox.FlushQueuedAppendText()
+		Me.MessageTextBox.FlushQueuedAppendText()
+
 		Me.FreeDataViewer()
 		Me.AppSettingDataViewerIsRunning = False
 	End Sub
@@ -282,20 +285,22 @@ Public Class ViewUserControl
 
 		If e.ProgressPercentage = 0 Then
 			Me.MessageTextBox.Text = ""
-			Me.MessageTextBox.AppendText(line + vbCrLf)
+			Me.MessageTextBox.QueueAppendText(line + vbCrLf)
 
 			Dim modelViewer As Viewer = CType(sender, Viewer)
 			If modelViewer Is Me.theModelViewerWithModel Then
 				Me.UpdateWidgets(True)
 			End If
 		ElseIf e.ProgressPercentage = 1 Then
-			Me.MessageTextBox.AppendText(line + vbCrLf)
+			Me.MessageTextBox.QueueAppendText(line + vbCrLf)
 		ElseIf e.ProgressPercentage = 100 Then
-			Me.MessageTextBox.AppendText(line + vbCrLf)
+			Me.MessageTextBox.QueueAppendText(line + vbCrLf)
 		End If
 	End Sub
 
 	Private Sub ViewerBackgroundWorker_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs)
+		Me.MessageTextBox.FlushQueuedAppendText()
+
 		Dim modelViewer As Viewer = CType(sender, Viewer)
 		If modelViewer Is Me.theModelViewerWithModel Then
 			Me.FreeModelViewerWithModel()
@@ -311,16 +316,18 @@ Public Class ViewUserControl
 
 		If e.ProgressPercentage = 0 Then
 			Me.MessageTextBox.Text = ""
-			Me.MessageTextBox.AppendText(line + vbCr)
+			Me.MessageTextBox.QueueAppendText(line + vbCr)
 			Me.UpdateWidgets(True)
 		ElseIf e.ProgressPercentage = 1 Then
-			Me.MessageTextBox.AppendText(line + vbCr)
+			Me.MessageTextBox.QueueAppendText(line + vbCr)
 		ElseIf e.ProgressPercentage = 100 Then
-			Me.MessageTextBox.AppendText(line + vbCr)
+			Me.MessageTextBox.QueueAppendText(line + vbCr)
 		End If
 	End Sub
 
 	Private Sub MappingToolBackgroundWorker_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs)
+		Me.MessageTextBox.FlushQueuedAppendText()
+
 		Dim mappingTool As MappingTool = CType(sender, MappingTool)
 		RemoveHandler mappingTool.ProgressChanged, AddressOf Me.MappingToolBackgroundWorker_ProgressChanged
 		RemoveHandler mappingTool.RunWorkerCompleted, AddressOf Me.MappingToolBackgroundWorker_RunWorkerCompleted
@@ -334,16 +341,18 @@ Public Class ViewUserControl
 
 		If e.ProgressPercentage = 0 Then
 			Me.MessageTextBox.Text = ""
-			Me.MessageTextBox.AppendText(line + vbCr)
+			Me.MessageTextBox.QueueAppendText(line + vbCr)
 			Me.UpdateWidgets(True)
 		ElseIf e.ProgressPercentage = 1 Then
-			Me.MessageTextBox.AppendText(line + vbCr)
+			Me.MessageTextBox.QueueAppendText(line + vbCr)
 		ElseIf e.ProgressPercentage = 100 Then
-			Me.MessageTextBox.AppendText(line + vbCr)
+			Me.MessageTextBox.QueueAppendText(line + vbCr)
 		End If
 	End Sub
 
 	Private Sub GameAppBackgroundWorker_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs)
+		Me.MessageTextBox.FlushQueuedAppendText()
+
 		Dim gameApp As GameApp = CType(sender, GameApp)
 		RemoveHandler gameApp.ProgressChanged, AddressOf Me.GameAppBackgroundWorker_ProgressChanged
 		RemoveHandler gameApp.RunWorkerCompleted, AddressOf Me.GameAppBackgroundWorker_RunWorkerCompleted

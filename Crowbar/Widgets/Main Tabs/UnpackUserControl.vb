@@ -656,17 +656,19 @@ Public Class UnpackUserControl
 			'TODO: Having the updating of disabled widgets here is unusual, so why not move this to before calling the backgroundworker?
 			'      One advantage to doing before call: Indicates to user that action has started even when opening file takes a while.
 			Me.UnpackerLogTextBox.Text = ""
-			Me.UnpackerLogTextBox.AppendText(line + vbCr)
+			Me.UnpackerLogTextBox.QueueAppendText(line + vbCr)
 			Me.theOutputPathOrOutputFileName = ""
 			Me.UpdateWidgets(True)
 		ElseIf e.ProgressPercentage = 1 Then
-			Me.UnpackerLogTextBox.AppendText(line + vbCr)
+			Me.UnpackerLogTextBox.QueueAppendText(line + vbCr)
 		ElseIf e.ProgressPercentage = 100 Then
-			Me.UnpackerLogTextBox.AppendText(line + vbCr)
+			Me.UnpackerLogTextBox.QueueAppendText(line + vbCr)
 		End If
 	End Sub
 
 	Private Sub UnpackerBackgroundWorker_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs)
+		Me.UnpackerLogTextBox.FlushQueuedAppendText()
+
 		If Not e.Cancelled AndAlso e.Result IsNot Nothing Then
 			Dim unpackResultInfo As UnpackerOutputInfo
 			unpackResultInfo = CType(e.Result, UnpackerOutputInfo)

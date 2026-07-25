@@ -397,16 +397,18 @@ Public Class DecompileUserControl
 
 		If e.ProgressPercentage = 0 Then
 			Me.DecompilerLogTextBox.Text = ""
-			Me.DecompilerLogTextBox.AppendText(line + vbCr)
+			Me.DecompilerLogTextBox.QueueAppendText(line + vbCr)
 			Me.UpdateWidgets(True)
 		ElseIf e.ProgressPercentage = 1 Then
-			Me.DecompilerLogTextBox.AppendText(line + vbCr)
+			Me.DecompilerLogTextBox.QueueAppendText(line + vbCr)
 		ElseIf e.ProgressPercentage = 100 Then
-			Me.DecompilerLogTextBox.AppendText(line + vbCr)
+			Me.DecompilerLogTextBox.QueueAppendText(line + vbCr)
 		End If
 	End Sub
 
 	Private Sub DecompilerBackgroundWorker_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs)
+		Me.DecompilerLogTextBox.FlushQueuedAppendText()
+
 		If Not e.Cancelled Then
 			Dim decompileResultInfo As DecompilerOutputInfo
 			decompileResultInfo = CType(e.Result, DecompilerOutputInfo)

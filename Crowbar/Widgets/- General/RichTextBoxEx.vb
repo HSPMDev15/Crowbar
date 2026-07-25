@@ -93,7 +93,64 @@ Public Class RichTextBoxEx
 		If TheApp IsNot Nothing Then
 			RemoveHandler TheApp.Settings.PropertyChanged, AddressOf Me.AppSettings_PropertyChanged
 		End If
+
+		If Me.theQueuedAppendFlushTimer IsNot Nothing Then
+			Me.theQueuedAppendFlushTimer.Stop()
+			RemoveHandler Me.theQueuedAppendFlushTimer.Tick, AddressOf Me.QueuedAppendFlushTimer_Tick
+			Me.theQueuedAppendFlushTimer.Dispose()
+			Me.theQueuedAppendFlushTimer = Nothing
+		End If
 	End Sub
+
+#End Region
+
+#Region "Queued Append"
+
+	''' <summary>
+	''' Queues text to be appended, instead of appending it immediately
+	''' Use this when a caller (e.g. a BackgroundWorker.ProgressChanged handler) receives
+	''' many lines in fast succession like the compiler output, queued text is flushed (actually appended),
+	''' in one single AppendText() call  on a timer.
+	'''
+	''' Call FlushQueuedAppendText() once the burst of incoming lines is done (e.g. BackgroundWorker.RunWorkerCompleted)
+	''' so nothing is left waiting on the timer to fire.
+	''' </summary>
+	Public Sub QueueAppendText(ByVal text As String)
+		Me.theQueuedAppendText.Append(text)
+
+		If Me.theQueuedAppendFlushTimer Is Nothing Then
+			Me.theQueuedAppendFlushTimer = New Timer()
+			Me.theQueuedAppendFlushTimer.Interval = 500
+			AddHandler Me.theQueuedAppendFlushTimer.Tick, AddressOf Me.QueuedAppendFlushTimer_Tick
+		End If
+		If Not Me.theQueuedAppendFlushTimer.Enabled Then
+			Me.theQueuedAppendFlushTimer.Start()
+		End If
+	End Sub
+
+	Private Sub QueuedAppendFlushTimer_Tick(ByVal sender As Object, ByVal e As EventArgs)
+		Me.FlushQueuedAppendText()
+	End Sub
+
+	''' <summary>
+	''' Actually appends (and shows) any text queued via QueueAppendText() that
+	''' hasn't been flushed by the timer yet, safe to call even if nothing is
+	''' queued.
+	''' </summary>
+	Public Sub FlushQueuedAppendText()
+		If Me.theQueuedAppendFlushTimer IsNot Nothing Then
+			Me.theQueuedAppendFlushTimer.Stop()
+		End If
+
+		If Me.theQueuedAppendText.Length > 0 Then
+			Dim textToAppend As String = Me.theQueuedAppendText.ToString()
+			Me.theQueuedAppendText.Clear()
+			Me.AppendText(textToAppend)
+		End If
+	End Sub
+
+	Private ReadOnly theQueuedAppendText As New System.Text.StringBuilder()
+	Private theQueuedAppendFlushTimer As Timer
 
 #End Region
 

@@ -337,16 +337,18 @@ Public Class PackUserControl
 
 		If e.ProgressPercentage = 0 Then
 			Me.LogRichTextBox.Text = ""
-			Me.LogRichTextBox.AppendText(line + vbCr)
+			Me.LogRichTextBox.QueueAppendText(line + vbCr)
 			Me.UpdateWidgets(True)
 		ElseIf e.ProgressPercentage = 1 Then
-			Me.LogRichTextBox.AppendText(line + vbCr)
+			Me.LogRichTextBox.QueueAppendText(line + vbCr)
 		ElseIf e.ProgressPercentage = 100 Then
-			Me.LogRichTextBox.AppendText(line + vbCr)
+			Me.LogRichTextBox.QueueAppendText(line + vbCr)
 		End If
 	End Sub
 
 	Private Sub PackerBackgroundWorker_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs)
+		Me.LogRichTextBox.FlushQueuedAppendText()
+
 		Dim statusText As String
 
 		If e.Cancelled Then

@@ -490,16 +490,18 @@ Public Class CompileUserControl
 
 		If e.ProgressPercentage = 0 Then
 			Me.CompileLogRichTextBox.Text = ""
-			Me.CompileLogRichTextBox.AppendText(line + vbCr)
+			Me.CompileLogRichTextBox.QueueAppendText(line + vbCr)
 			Me.UpdateWidgets(True)
 		ElseIf e.ProgressPercentage = 1 Then
-			Me.CompileLogRichTextBox.AppendText(line + vbCr)
+			Me.CompileLogRichTextBox.QueueAppendText(line + vbCr)
 		ElseIf e.ProgressPercentage = 100 Then
-			Me.CompileLogRichTextBox.AppendText(line + vbCr)
+			Me.CompileLogRichTextBox.QueueAppendText(line + vbCr)
 		End If
 	End Sub
 
 	Private Sub CompilerBackgroundWorker_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs)
+		Me.CompileLogRichTextBox.FlushQueuedAppendText()
+
 		Dim statusText As String
 
 		If e.Cancelled Then
