@@ -337,18 +337,12 @@ Public Class PackUserControl
 
 		If e.ProgressPercentage = 0 Then
 			Me.LogRichTextBox.Text = ""
-			Me.LogRichTextBox.BeginUpdate()
 			Me.LogRichTextBox.AppendText(line + vbCr)
-			Me.LogRichTextBox.EndUpdate()
 			Me.UpdateWidgets(True)
 		ElseIf e.ProgressPercentage = 1 Then
-			Me.LogRichTextBox.BeginUpdate()
 			Me.LogRichTextBox.AppendText(line + vbCr)
-			Me.LogRichTextBox.EndUpdate()
 		ElseIf e.ProgressPercentage = 100 Then
-			Me.LogRichTextBox.BeginUpdate()
 			Me.LogRichTextBox.AppendText(line + vbCr)
-			Me.LogRichTextBox.EndUpdate()
 		End If
 	End Sub
 

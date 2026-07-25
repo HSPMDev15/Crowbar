@@ -597,9 +597,7 @@ Public Class PublishUserControl
 
 	Private Sub GetPublishedItems_ProgressChanged(ByVal sender As System.Object, ByVal e As System.ComponentModel.ProgressChangedEventArgs)
 		If e.ProgressPercentage = 0 Then
-			Me.LogTextBox.BeginUpdate()
 			Me.LogTextBox.AppendText(CStr(e.UserState))
-			Me.LogTextBox.EndUpdate()
 		ElseIf e.ProgressPercentage = 1 Then
 			Me.theExpectedPublishedItemCount = CUInt(e.UserState)
 		ElseIf e.ProgressPercentage = 2 Then
@@ -649,9 +647,7 @@ Public Class PublishUserControl
 
 	Private Sub GetPublishedItemDetails_ProgressChanged(ByVal sender As System.Object, ByVal e As System.ComponentModel.ProgressChangedEventArgs)
 		If e.ProgressPercentage = 0 Then
-			Me.LogTextBox.BeginUpdate()
 			Me.LogTextBox.AppendText(CStr(e.UserState))
-			Me.LogTextBox.EndUpdate()
 		ElseIf e.ProgressPercentage = 1 Then
 			If Me.ItemPreviewImagePictureBox.Image IsNot Nothing Then
 				Me.ItemPreviewImagePictureBox.Image.Dispose()
@@ -663,6 +659,7 @@ Public Class PublishUserControl
 	End Sub
 
 	Private Sub GetPublishedItemDetails_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs)
+
 		If e.Cancelled Then
 			Dim debug As Integer = 4242
 		Else
@@ -764,24 +761,18 @@ Public Class PublishUserControl
 
 	Private Sub PublishItem_ProgressChanged(ByVal sender As System.Object, ByVal e As System.ComponentModel.ProgressChangedEventArgs)
 		If e.ProgressPercentage = 0 Then
-			Me.LogTextBox.BeginUpdate()
 			Me.LogTextBox.AppendText(CStr(e.UserState))
-			Me.LogTextBox.EndUpdate()
 		ElseIf e.ProgressPercentage = 1 Then
-			Me.LogTextBox.BeginUpdate()
 			Me.LogTextBox.AppendText(vbTab + CStr(e.UserState))
-			Me.LogTextBox.EndUpdate()
 		ElseIf e.ProgressPercentage = 2 Then
 			Dim outputInfo As BackgroundSteamPipe.PublishItemProgressInfo = CType(e.UserState, BackgroundSteamPipe.PublishItemProgressInfo)
 			'TODO: Change to using a progressbar.
-			Me.LogTextBox.BeginUpdate()
 			If outputInfo.TotalUploadedByteCount > 0 Then
 				Dim progressPercentage As Integer = CInt(outputInfo.UploadedByteCount * 100 / outputInfo.TotalUploadedByteCount)
 				Me.LogTextBox.AppendText(vbTab + vbTab + outputInfo.Status + ": " + outputInfo.UploadedByteCount.ToString("N0") + " / " + outputInfo.TotalUploadedByteCount.ToString("N0") + "   " + progressPercentage.ToString() + " %" + vbCrLf)
 			Else
 				Me.LogTextBox.AppendText(vbTab + outputInfo.Status + "." + vbCrLf)
 			End If
-			Me.LogTextBox.EndUpdate()
 		End If
 	End Sub
 

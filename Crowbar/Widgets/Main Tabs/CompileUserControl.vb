@@ -490,18 +490,12 @@ Public Class CompileUserControl
 
 		If e.ProgressPercentage = 0 Then
 			Me.CompileLogRichTextBox.Text = ""
-			Me.CompileLogRichTextBox.BeginUpdate()
 			Me.CompileLogRichTextBox.AppendText(line + vbCr)
-			Me.CompileLogRichTextBox.EndUpdate()
 			Me.UpdateWidgets(True)
 		ElseIf e.ProgressPercentage = 1 Then
-			Me.CompileLogRichTextBox.BeginUpdate()
 			Me.CompileLogRichTextBox.AppendText(line + vbCr)
-			Me.CompileLogRichTextBox.EndUpdate()
 		ElseIf e.ProgressPercentage = 100 Then
-			Me.CompileLogRichTextBox.BeginUpdate()
 			Me.CompileLogRichTextBox.AppendText(line + vbCr)
-			Me.CompileLogRichTextBox.EndUpdate()
 		End If
 	End Sub
 

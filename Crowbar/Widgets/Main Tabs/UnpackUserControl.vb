@@ -570,15 +570,11 @@ Public Class UnpackUserControl
 			'	Next
 		ElseIf e.ProgressPercentage = 50 Then
 			Me.UnpackerLogTextBox.Text = ""
-			Me.UnpackerLogTextBox.BeginUpdate()
 			Me.UnpackerLogTextBox.AppendText(CStr(e.UserState) + vbCr)
-			Me.UnpackerLogTextBox.EndUpdate()
 			'NOTE: Set the textbox to show first line of text.
 			Me.UnpackerLogTextBox.Select(0, 0)
 		ElseIf e.ProgressPercentage = 51 Then
-			Me.UnpackerLogTextBox.BeginUpdate()
 			Me.UnpackerLogTextBox.AppendText(CStr(e.UserState) + vbCr)
-			Me.UnpackerLogTextBox.EndUpdate()
 			'NOTE: Set the textbox to show first line of text.
 			Me.UnpackerLogTextBox.Select(0, 0)
 		ElseIf e.ProgressPercentage = 100 Then
@@ -660,19 +656,13 @@ Public Class UnpackUserControl
 			'TODO: Having the updating of disabled widgets here is unusual, so why not move this to before calling the backgroundworker?
 			'      One advantage to doing before call: Indicates to user that action has started even when opening file takes a while.
 			Me.UnpackerLogTextBox.Text = ""
-			Me.UnpackerLogTextBox.BeginUpdate()
 			Me.UnpackerLogTextBox.AppendText(line + vbCr)
-			Me.UnpackerLogTextBox.EndUpdate()
 			Me.theOutputPathOrOutputFileName = ""
 			Me.UpdateWidgets(True)
 		ElseIf e.ProgressPercentage = 1 Then
-			Me.UnpackerLogTextBox.BeginUpdate()
 			Me.UnpackerLogTextBox.AppendText(line + vbCr)
-			Me.UnpackerLogTextBox.EndUpdate()
 		ElseIf e.ProgressPercentage = 100 Then
-			Me.UnpackerLogTextBox.BeginUpdate()
 			Me.UnpackerLogTextBox.AppendText(line + vbCr)
-			Me.UnpackerLogTextBox.EndUpdate()
 		End If
 	End Sub
 

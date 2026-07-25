@@ -397,18 +397,12 @@ Public Class DecompileUserControl
 
 		If e.ProgressPercentage = 0 Then
 			Me.DecompilerLogTextBox.Text = ""
-			Me.DecompilerLogTextBox.BeginUpdate()
 			Me.DecompilerLogTextBox.AppendText(line + vbCr)
-			Me.DecompilerLogTextBox.EndUpdate()
 			Me.UpdateWidgets(True)
 		ElseIf e.ProgressPercentage = 1 Then
-			Me.DecompilerLogTextBox.BeginUpdate()
 			Me.DecompilerLogTextBox.AppendText(line + vbCr)
-			Me.DecompilerLogTextBox.EndUpdate()
 		ElseIf e.ProgressPercentage = 100 Then
-			Me.DecompilerLogTextBox.BeginUpdate()
 			Me.DecompilerLogTextBox.AppendText(line + vbCr)
-			Me.DecompilerLogTextBox.EndUpdate()
 		End If
 	End Sub
 

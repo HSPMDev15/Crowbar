@@ -262,18 +262,12 @@ Public Class ViewUserControl
 			'Me.InfoRichTextBox.AppendText(line + vbCr)
 			'Me.AppSettingDataViewerIsRunning = True
 			Me.MessageTextBox.Text = ""
-			Me.MessageTextBox.BeginUpdate()
 			Me.MessageTextBox.AppendText(line + vbCrLf)
-			Me.MessageTextBox.EndUpdate()
 		ElseIf e.ProgressPercentage = 1 Then
-			Me.InfoRichTextBox.BeginUpdate()
 			Me.InfoRichTextBox.AppendText(line + vbCr)
-			Me.InfoRichTextBox.EndUpdate()
 		ElseIf e.ProgressPercentage = 100 Then
 			'Me.InfoRichTextBox.AppendText(line + vbCr)
-			Me.MessageTextBox.BeginUpdate()
 			Me.MessageTextBox.AppendText(line + vbCrLf)
-			Me.MessageTextBox.EndUpdate()
 		End If
 	End Sub
 
@@ -288,22 +282,16 @@ Public Class ViewUserControl
 
 		If e.ProgressPercentage = 0 Then
 			Me.MessageTextBox.Text = ""
-			Me.MessageTextBox.BeginUpdate()
 			Me.MessageTextBox.AppendText(line + vbCrLf)
-			Me.MessageTextBox.EndUpdate()
 
 			Dim modelViewer As Viewer = CType(sender, Viewer)
 			If modelViewer Is Me.theModelViewerWithModel Then
 				Me.UpdateWidgets(True)
 			End If
 		ElseIf e.ProgressPercentage = 1 Then
-			Me.MessageTextBox.BeginUpdate()
 			Me.MessageTextBox.AppendText(line + vbCrLf)
-			Me.MessageTextBox.EndUpdate()
 		ElseIf e.ProgressPercentage = 100 Then
-			Me.MessageTextBox.BeginUpdate()
 			Me.MessageTextBox.AppendText(line + vbCrLf)
-			Me.MessageTextBox.EndUpdate()
 		End If
 	End Sub
 
@@ -323,18 +311,12 @@ Public Class ViewUserControl
 
 		If e.ProgressPercentage = 0 Then
 			Me.MessageTextBox.Text = ""
-			Me.MessageTextBox.BeginUpdate()
 			Me.MessageTextBox.AppendText(line + vbCr)
-			Me.MessageTextBox.EndUpdate()
 			Me.UpdateWidgets(True)
 		ElseIf e.ProgressPercentage = 1 Then
-			Me.MessageTextBox.BeginUpdate()
 			Me.MessageTextBox.AppendText(line + vbCr)
-			Me.MessageTextBox.EndUpdate()
 		ElseIf e.ProgressPercentage = 100 Then
-			Me.MessageTextBox.BeginUpdate()
 			Me.MessageTextBox.AppendText(line + vbCr)
-			Me.MessageTextBox.EndUpdate()
 		End If
 	End Sub
 
@@ -352,18 +334,12 @@ Public Class ViewUserControl
 
 		If e.ProgressPercentage = 0 Then
 			Me.MessageTextBox.Text = ""
-			Me.MessageTextBox.BeginUpdate()
 			Me.MessageTextBox.AppendText(line + vbCr)
-			Me.MessageTextBox.EndUpdate()
 			Me.UpdateWidgets(True)
 		ElseIf e.ProgressPercentage = 1 Then
-			Me.MessageTextBox.BeginUpdate()
 			Me.MessageTextBox.AppendText(line + vbCr)
-			Me.MessageTextBox.EndUpdate()
 		ElseIf e.ProgressPercentage = 100 Then
-			Me.MessageTextBox.BeginUpdate()
 			Me.MessageTextBox.AppendText(line + vbCr)
-			Me.MessageTextBox.EndUpdate()
 		End If
 	End Sub
 
