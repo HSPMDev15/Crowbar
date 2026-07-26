@@ -1,4 +1,4 @@
-name: CI
+name: CI-CD
 
 on:
   push:
@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    permissions:
+      contents: write
 
     steps:
     - name: Download repository
@@ -27,8 +29,21 @@ jobs:
     - name: Compile
       run: msbuild Crowbar.sln /p:Configuration=Release /p:Platform=x86
 
+    - name: Compress with 7z
+      run: |
+        $releaseDir = Get-ChildItem -Path . -Recurse -Directory -Filter "Release" | Where-Object { $_.FullName -like "*bin\x86\Release" } | Select-Object -First 1
+        cd $releaseDir.FullName
+        7z a "$($env:GITHUB_WORKSPACE)\Crowbar_darkmode.7z" Crowbar.exe
+
+      shell: pwsh
+
     - name: Upload artifact
-      uses: actions/upload-artifact@v4
+      uses: softprops/action-gh-release@v2
       with:
-        name: Crowbar-Build
-        path: "**/bin/x86/Release/Crowbar.exe"
+        tag_name: "v0.74_(DarkMode)" 
+        name: "Crowbar_0.74(DarkMode)"
+        draft: false
+        prerelease: false
+        files: Crowbar_darkmode.7z
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
