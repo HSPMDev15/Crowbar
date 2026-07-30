@@ -974,7 +974,14 @@ Public Class ComboUserControl
 			Me.theSelectedIndexIsChangingViaMe = False
 
 			Me.TextHistoryPopup.Width = Me.Width
-			Me.TextHistoryPopup.Height = Me.TextHistoryDataGridView.Rows(0).Height * (itemCount)
+			' Rows(0) throws IndexOutOfRangeException when the combo has zero
+			' items (like an empty data source), USE RowTemplate.Height instead
+			' which is always available even with zero rows.
+			Dim rowHeight As Integer = Me.TextHistoryDataGridView.RowTemplate.Height
+			If Me.TextHistoryDataGridView.Rows.Count > 0 Then
+				rowHeight = Me.TextHistoryDataGridView.Rows(0).Height
+			End If
+			Me.TextHistoryPopup.Height = rowHeight * itemCount
 			'Me.TextHistoryPopup.Width = Me.TextHistoryDataGridView.Columns.GetColumnsWidth(DataGridViewElementStates.Visible)
 			'Me.TextHistoryPopup.Height = Me.TextHistoryDataGridView.Rows.GetRowsHeight(DataGridViewElementStates.Visible)
 			'Me.TextHistoryPopup.Size = Me.Size
