@@ -25,61 +25,61 @@ Partial Class UnpackUserControl
 		Me.components = New System.ComponentModel.Container()
 		Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
 		Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-		Me.LogFileCheckBox = New System.Windows.Forms.CheckBox()
-		Me.Panel2 = New System.Windows.Forms.Panel()
-		Me.OutputSamePathTextBox = New Crowbar.TextBoxEx()
-		Me.GameModelsOutputPathTextBox = New Crowbar.TextBoxEx()
-		Me.UnpackModeComboBox = New System.Windows.Forms.ComboBox()
-		Me.GotoOutputPathButton = New System.Windows.Forms.Button()
-		Me.BrowseForOutputPathButton = New System.Windows.Forms.Button()
-		Me.OutputPathTextBox = New Crowbar.TextBoxEx()
-		Me.OutputSubfolderTextBox = New Crowbar.TextBoxEx()
-		Me.OutputPathComboBox = New System.Windows.Forms.ComboBox()
+		Me.LogFileCheckBox = New Crowbar.CheckBoxEx()
+		Me.Panel2 = New Crowbar.PanelEx()
+		Me.OutputSamePathTextBox = New Crowbar.RichTextBoxEx()
+		Me.GameModelsOutputPathTextBox = New Crowbar.RichTextBoxEx()
+		Me.UnpackModeComboBox = New Crowbar.ComboUserControl()
+		Me.GotoOutputPathButton = New Crowbar.ButtonEx()
+		Me.BrowseForOutputPathButton = New Crowbar.ButtonEx()
+		Me.OutputPathTextBox = New Crowbar.RichTextBoxEx()
+		Me.OutputSubfolderTextBox = New Crowbar.RichTextBoxEx()
+		Me.OutputPathComboBox = New Crowbar.ComboUserControl()
 		Me.Label2 = New System.Windows.Forms.Label()
-		Me.UseDefaultOutputSubfolderButton = New System.Windows.Forms.Button()
+		Me.UseDefaultOutputSubfolderButton = New Crowbar.ButtonEx()
 		Me.PackagesLabel = New System.Windows.Forms.Label()
-		Me.PackagePathFileNameTextBox = New Crowbar.TextBoxEx()
-		Me.BrowseForPackagePathFolderOrFileNameButton = New System.Windows.Forms.Button()
-		Me.GotoPackageButton = New System.Windows.Forms.Button()
-		Me.Options_LogSplitContainer = New System.Windows.Forms.SplitContainer()
-		Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
-		Me.ContentsGroupBox = New System.Windows.Forms.GroupBox()
-		Me.ContentsGroupBoxFillPanel = New System.Windows.Forms.Panel()
-		Me.SplitContainer3 = New System.Windows.Forms.SplitContainer()
+		Me.PackagePathFileNameTextBox = New Crowbar.RichTextBoxEx()
+		Me.BrowseForPackagePathFolderOrFileNameButton = New Crowbar.ButtonEx()
+		Me.GotoPackageButton = New Crowbar.ButtonEx()
+		Me.Options_LogSplitContainer = New Crowbar.SplitContainerEx()
+		Me.SplitContainer2 = New Crowbar.SplitContainerEx()
+		Me.ContentsGroupBox = New Crowbar.GroupBoxEx()
+		Me.ContentsGroupBoxFillPanel = New Crowbar.PanelEx()
+		Me.SplitContainer3 = New Crowbar.SplitContainerEx()
 		Me.PackageTreeView = New Crowbar.TreeViewEx()
-		Me.PackageListView = New System.Windows.Forms.ListView()
-		Me.Panel3 = New System.Windows.Forms.Panel()
-		Me.SelectionPathTextBox = New System.Windows.Forms.TextBox()
-		Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-		Me.FindToolStripTextBox = New Crowbar.ToolStripSpringTextBox()
-		Me.FindToolStripButton = New System.Windows.Forms.ToolStripButton()
-		Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-		Me.FilesSelectedCountToolStripLabel = New System.Windows.Forms.ToolStripLabel()
-		Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-		Me.SizeSelectedTotalToolStripLabel = New System.Windows.Forms.ToolStripLabel()
-		Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-		Me.RefreshListingToolStripButton = New System.Windows.Forms.ToolStripButton()
-		Me.ContentsMinScrollerPanel = New System.Windows.Forms.Panel()
-		Me.OptionsGroupBox = New System.Windows.Forms.GroupBox()
-		Me.OptionsGroupBoxFillPanel = New System.Windows.Forms.Panel()
-		Me.KeepFullPathCheckBox = New System.Windows.Forms.CheckBox()
-		Me.FolderForEachPackageCheckBox = New System.Windows.Forms.CheckBox()
+		Me.PackageListView = New Crowbar.ListViewEx()
+		Me.Panel3 = New Crowbar.PanelEx()
+		Me.SelectionPathTextBox = New Crowbar.RichTextBoxEx()
+		Me.ToolStrip1 = New Crowbar.ToolStripEx()
+		Me.FindToolStripTextBox = New Crowbar.ToolStripSpringTextBoxEx()
+		Me.FindToolStripButton = New Crowbar.ToolStripButtonEx()
+		Me.ToolStripSeparator1 = New Crowbar.ToolStripSeparatorEx()
+		Me.FilesSelectedCountToolStripLabel = New Crowbar.ToolStripLabelEx()
+		Me.ToolStripSeparator3 = New Crowbar.ToolStripSeparatorEx()
+		Me.SizeSelectedTotalToolStripLabel = New Crowbar.ToolStripLabelEx()
+		Me.ToolStripSeparator2 = New Crowbar.ToolStripSeparatorEx()
+		Me.RefreshListingToolStripButton = New Crowbar.ToolStripButtonEx()
+		Me.ContentsMinScrollerPanel = New Crowbar.PanelEx()
+		Me.OptionsGroupBox = New Crowbar.GroupBoxEx()
+		Me.OptionsGroupBoxFillPanel = New Crowbar.PanelEx()
+		Me.KeepFullPathCheckBox = New Crowbar.CheckBoxEx()
+		Me.FolderForEachPackageCheckBox = New Crowbar.CheckBoxEx()
 		Me.Label3 = New System.Windows.Forms.Label()
-		Me.EditGameSetupButton = New System.Windows.Forms.Button()
+		Me.EditGameSetupButton = New Crowbar.ButtonEx()
 		Me.GameSetupComboBox = New System.Windows.Forms.ComboBox()
-		Me.SelectAllModelsAndMaterialsFoldersCheckBox = New System.Windows.Forms.CheckBox()
-		Me.UnpackOptionsUseDefaultsButton = New System.Windows.Forms.Button()
+		Me.SelectAllModelsAndMaterialsFoldersCheckBox = New Crowbar.CheckBoxEx()
+		Me.UnpackOptionsUseDefaultsButton = New Crowbar.ButtonEx()
 		Me.UnpackerLogTextBox = New Crowbar.RichTextBoxEx()
-		Me.UnpackButtonsPanel = New System.Windows.Forms.Panel()
-		Me.UnpackButton = New System.Windows.Forms.Button()
-		Me.SkipCurrentPackageButton = New System.Windows.Forms.Button()
-		Me.CancelUnpackButton = New System.Windows.Forms.Button()
-		Me.UseAllInDecompileButton = New System.Windows.Forms.Button()
-		Me.PostUnpackPanel = New System.Windows.Forms.Panel()
-		Me.UnpackedFilesComboBox = New System.Windows.Forms.ComboBox()
-		Me.UseInPreviewButton = New System.Windows.Forms.Button()
-		Me.UseInDecompileButton = New System.Windows.Forms.Button()
-		Me.GotoUnpackedFileButton = New System.Windows.Forms.Button()
+		Me.UnpackButtonsPanel = New Crowbar.PanelEx()
+		Me.UnpackButton = New Crowbar.ButtonEx()
+		Me.SkipCurrentPackageButton = New Crowbar.ButtonEx()
+		Me.CancelUnpackButton = New Crowbar.ButtonEx()
+		Me.UseAllInDecompileButton = New Crowbar.ButtonEx()
+		Me.PostUnpackPanel = New Crowbar.PanelEx()
+		Me.UnpackedFilesComboBox = New Crowbar.ComboUserControl()
+		Me.UseInPreviewButton = New Crowbar.ButtonEx()
+		Me.UseInDecompileButton = New Crowbar.ButtonEx()
+		Me.GotoUnpackedFileButton = New Crowbar.ButtonEx()
 		Me.Panel2.SuspendLayout()
 		CType(Me.Options_LogSplitContainer, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Options_LogSplitContainer.Panel1.SuspendLayout()
@@ -167,12 +167,17 @@ Partial Class UnpackUserControl
 		'
 		'UnpackComboBox
 		'
-		Me.UnpackModeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.UnpackModeComboBox.FormattingEnabled = True
+		Me.UnpackModeComboBox.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+		Me.UnpackModeComboBox.IsReadOnly = True
 		Me.UnpackModeComboBox.Location = New System.Drawing.Point(71, 4)
+		Me.UnpackModeComboBox.MaxDropDownItems = 30
+		Me.UnpackModeComboBox.MultipleInputsIsAllowed = False
 		Me.UnpackModeComboBox.Name = "UnpackComboBox"
-		Me.UnpackModeComboBox.Size = New System.Drawing.Size(132, 21)
+		Me.UnpackModeComboBox.Size = New System.Drawing.Size(132, 23)
 		Me.UnpackModeComboBox.TabIndex = 1
+		Me.UnpackModeComboBox.TextHistoryIsKept = False
+		Me.UnpackModeComboBox.TextHistoryMaxSize = 15
+		Me.UnpackModeComboBox.TextIsPathFileNames = False
 		'
 		'GotoOutputPathButton
 		'
@@ -219,12 +224,17 @@ Partial Class UnpackUserControl
 		'
 		'OutputPathComboBox
 		'
-		Me.OutputPathComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.OutputPathComboBox.FormattingEnabled = True
+		Me.OutputPathComboBox.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+		Me.OutputPathComboBox.IsReadOnly = True
 		Me.OutputPathComboBox.Location = New System.Drawing.Point(71, 33)
+		Me.OutputPathComboBox.MaxDropDownItems = 30
+		Me.OutputPathComboBox.MultipleInputsIsAllowed = False
 		Me.OutputPathComboBox.Name = "OutputPathComboBox"
-		Me.OutputPathComboBox.Size = New System.Drawing.Size(132, 21)
+		Me.OutputPathComboBox.Size = New System.Drawing.Size(132, 23)
 		Me.OutputPathComboBox.TabIndex = 14
+		Me.OutputPathComboBox.TextHistoryIsKept = False
+		Me.OutputPathComboBox.TextHistoryMaxSize = 15
+		Me.OutputPathComboBox.TextIsPathFileNames = False
 		'
 		'Label2
 		'
@@ -680,12 +690,17 @@ Partial Class UnpackUserControl
 		'
 		Me.UnpackedFilesComboBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
 			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.UnpackedFilesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.UnpackedFilesComboBox.FormattingEnabled = True
+		Me.UnpackedFilesComboBox.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+		Me.UnpackedFilesComboBox.IsReadOnly = True
 		Me.UnpackedFilesComboBox.Location = New System.Drawing.Point(0, 4)
+		Me.UnpackedFilesComboBox.MaxDropDownItems = 30
+		Me.UnpackedFilesComboBox.MultipleInputsIsAllowed = False
 		Me.UnpackedFilesComboBox.Name = "UnpackedFilesComboBox"
-		Me.UnpackedFilesComboBox.Size = New System.Drawing.Size(512, 21)
+		Me.UnpackedFilesComboBox.Size = New System.Drawing.Size(512, 23)
 		Me.UnpackedFilesComboBox.TabIndex = 1
+		Me.UnpackedFilesComboBox.TextHistoryIsKept = False
+		Me.UnpackedFilesComboBox.TextHistoryMaxSize = 15
+		Me.UnpackedFilesComboBox.TextIsPathFileNames = False
 		'
 		'UseInPreviewButton
 		'
@@ -755,61 +770,61 @@ Partial Class UnpackUserControl
 		Me.ResumeLayout(False)
 
 	End Sub
-	Friend WithEvents Panel2 As System.Windows.Forms.Panel
-	Friend WithEvents GotoPackageButton As System.Windows.Forms.Button
+	Friend WithEvents Panel2 As PanelEx
+	Friend WithEvents GotoPackageButton As ButtonEx
 	Friend WithEvents PackagesLabel As System.Windows.Forms.Label
-	Friend WithEvents BrowseForPackagePathFolderOrFileNameButton As System.Windows.Forms.Button
-	Friend WithEvents PackagePathFileNameTextBox As Crowbar.TextBoxEx
-	Friend WithEvents Options_LogSplitContainer As System.Windows.Forms.SplitContainer
-	Friend WithEvents UseAllInDecompileButton As System.Windows.Forms.Button
-	Friend WithEvents UnpackModeComboBox As System.Windows.Forms.ComboBox
-	Friend WithEvents CancelUnpackButton As System.Windows.Forms.Button
-	Friend WithEvents SkipCurrentPackageButton As System.Windows.Forms.Button
-	Friend WithEvents UnpackButton As System.Windows.Forms.Button
-	Friend WithEvents OptionsGroupBox As System.Windows.Forms.GroupBox
-	Friend WithEvents UseInDecompileButton As System.Windows.Forms.Button
-	Friend WithEvents UseInPreviewButton As System.Windows.Forms.Button
+	Friend WithEvents BrowseForPackagePathFolderOrFileNameButton As ButtonEx
+	Friend WithEvents PackagePathFileNameTextBox As Crowbar.RichTextBoxEx
+	Friend WithEvents Options_LogSplitContainer As SplitContainerEx
+	Friend WithEvents UseAllInDecompileButton As ButtonEx
+	Friend WithEvents UnpackModeComboBox As ComboUserControl
+	Friend WithEvents CancelUnpackButton As ButtonEx
+	Friend WithEvents SkipCurrentPackageButton As ButtonEx
+	Friend WithEvents UnpackButton As ButtonEx
+	Friend WithEvents OptionsGroupBox As GroupBoxEx
+	Friend WithEvents UseInDecompileButton As ButtonEx
+	Friend WithEvents UseInPreviewButton As ButtonEx
 	Friend WithEvents UnpackerLogTextBox As Crowbar.RichTextBoxEx
-	Friend WithEvents UnpackedFilesComboBox As System.Windows.Forms.ComboBox
-	Friend WithEvents GotoUnpackedFileButton As System.Windows.Forms.Button
-	Friend WithEvents ContentsGroupBox As System.Windows.Forms.GroupBox
+	Friend WithEvents UnpackedFilesComboBox As ComboUserControl
+	Friend WithEvents GotoUnpackedFileButton As ButtonEx
+	Friend WithEvents ContentsGroupBox As GroupBoxEx
 	Friend WithEvents PackageTreeView As Crowbar.TreeViewEx
-	Friend WithEvents SplitContainer2 As System.Windows.Forms.SplitContainer
-	Friend WithEvents SplitContainer3 As System.Windows.Forms.SplitContainer
-	Friend WithEvents UnpackOptionsUseDefaultsButton As System.Windows.Forms.Button
-	Friend WithEvents SelectionPathTextBox As System.Windows.Forms.TextBox
-	Friend WithEvents SelectAllModelsAndMaterialsFoldersCheckBox As System.Windows.Forms.CheckBox
+	Friend WithEvents SplitContainer2 As SplitContainerEx
+	Friend WithEvents SplitContainer3 As SplitContainerEx
+	Friend WithEvents UnpackOptionsUseDefaultsButton As ButtonEx
+	Friend WithEvents SelectionPathTextBox As Crowbar.RichTextBoxEx
+	Friend WithEvents SelectAllModelsAndMaterialsFoldersCheckBox As CheckBoxEx
 	Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
 	Friend WithEvents Label3 As System.Windows.Forms.Label
 	Friend WithEvents GameSetupComboBox As System.Windows.Forms.ComboBox
-	Friend WithEvents EditGameSetupButton As System.Windows.Forms.Button
-	Friend WithEvents LogFileCheckBox As System.Windows.Forms.CheckBox
-	Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
-	Friend WithEvents FilesSelectedCountToolStripLabel As System.Windows.Forms.ToolStripLabel
-	Friend WithEvents FindToolStripTextBox As ToolStripSpringTextBox
-	Friend WithEvents FindToolStripButton As System.Windows.Forms.ToolStripButton
-	Friend WithEvents SizeSelectedTotalToolStripLabel As System.Windows.Forms.ToolStripLabel
-	Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
-	Friend WithEvents OptionsGroupBoxFillPanel As System.Windows.Forms.Panel
-	Friend WithEvents PackageListView As System.Windows.Forms.ListView
+	Friend WithEvents EditGameSetupButton As ButtonEx
+	Friend WithEvents LogFileCheckBox As CheckBoxEx
+	Friend WithEvents ToolStrip1 As ToolStripEx
+	Friend WithEvents FilesSelectedCountToolStripLabel As ToolStripLabelEx
+	Friend WithEvents FindToolStripTextBox As ToolStripSpringTextBoxEx
+	Friend WithEvents FindToolStripButton As ToolStripButtonEx
+	Friend WithEvents SizeSelectedTotalToolStripLabel As ToolStripLabelEx
+	Friend WithEvents ToolStripSeparator1 As ToolStripSeparatorEx
+	Friend WithEvents OptionsGroupBoxFillPanel As PanelEx
+	Friend WithEvents PackageListView As ListViewEx
 	Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
-	Friend WithEvents GameModelsOutputPathTextBox As Crowbar.TextBoxEx
-	Friend WithEvents GotoOutputPathButton As System.Windows.Forms.Button
-	Friend WithEvents BrowseForOutputPathButton As System.Windows.Forms.Button
-	Friend WithEvents OutputPathTextBox As Crowbar.TextBoxEx
-	Friend WithEvents OutputPathComboBox As System.Windows.Forms.ComboBox
+	Friend WithEvents GameModelsOutputPathTextBox As Crowbar.RichTextBoxEx
+	Friend WithEvents GotoOutputPathButton As ButtonEx
+	Friend WithEvents BrowseForOutputPathButton As ButtonEx
+	Friend WithEvents OutputPathTextBox As Crowbar.RichTextBoxEx
+	Friend WithEvents OutputPathComboBox As ComboUserControl
 	Friend WithEvents Label2 As System.Windows.Forms.Label
-	Friend WithEvents UseDefaultOutputSubfolderButton As System.Windows.Forms.Button
-	Friend WithEvents OutputSubfolderTextBox As Crowbar.TextBoxEx
-	Friend WithEvents OutputSamePathTextBox As TextBoxEx
-	Friend WithEvents FolderForEachPackageCheckBox As CheckBox
-	Friend WithEvents RefreshListingToolStripButton As ToolStripButton
-	Friend WithEvents PostUnpackPanel As Panel
-	Friend WithEvents UnpackButtonsPanel As Panel
-	Friend WithEvents Panel3 As Panel
-	Friend WithEvents ContentsGroupBoxFillPanel As Panel
-	Friend WithEvents ContentsMinScrollerPanel As Panel
-	Friend WithEvents KeepFullPathCheckBox As CheckBox
-	Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
-	Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+	Friend WithEvents UseDefaultOutputSubfolderButton As ButtonEx
+	Friend WithEvents OutputSubfolderTextBox As Crowbar.RichTextBoxEx
+	Friend WithEvents OutputSamePathTextBox As Crowbar.RichTextBoxEx
+	Friend WithEvents FolderForEachPackageCheckBox As CheckBoxEx
+	Friend WithEvents RefreshListingToolStripButton As ToolStripButtonEx
+	Friend WithEvents PostUnpackPanel As PanelEx
+	Friend WithEvents UnpackButtonsPanel As PanelEx
+	Friend WithEvents Panel3 As PanelEx
+	Friend WithEvents ContentsGroupBoxFillPanel As PanelEx
+	Friend WithEvents ContentsMinScrollerPanel As PanelEx
+	Friend WithEvents KeepFullPathCheckBox As CheckBoxEx
+	Friend WithEvents ToolStripSeparator3 As ToolStripSeparatorEx
+	Friend WithEvents ToolStripSeparator2 As ToolStripSeparatorEx
 End Class

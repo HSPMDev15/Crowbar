@@ -353,6 +353,7 @@ Public Class App
 		defaultCrowbarTheme.ComboUserControlTheme = New ComboUserControlTheme()
 		defaultCrowbarTheme.DataGridViewTheme = New DataGridViewTheme()
 		defaultCrowbarTheme.GroupBoxTheme = New GroupBoxTheme()
+		defaultCrowbarTheme.ListViewTheme = New ListViewTheme()
 		defaultCrowbarTheme.PanelTheme = New PanelTheme()
 		defaultCrowbarTheme.ProgressBarTheme = New ProgressBarTheme()
 		defaultCrowbarTheme.RadioButtonTheme = New RadioButtonTheme()

@@ -10,7 +10,6 @@ Public Class UnpackUserControl
 		' This call is required by the Windows Form Designer.
 		InitializeComponent()
 
-		Me.UnpackModeComboBox.DropDownWidth = 300
 		Me.theUnpackModeIndexIsBeingChangedByMe = False
 		Me.theUnpackPackagePathFolderOrFileNameIsBeingChangedByMe = False
 
@@ -31,6 +30,13 @@ Public Class UnpackUserControl
 #Region "Init and Free"
 
 	Protected Overrides Sub Init()
+		MyBase.Init()
+
+		' [04-Feb-2026] Because Me.DesignMode is unreliable in nested widgets, must do this check to prevent a crash.
+		If TheApp Is Nothing Then
+			Exit Sub
+		End If
+
 		'Me.thePackageFileNames = New BindingListEx(Of PackagePathFileNameInfo)()
 
 		Me.PackagePathFileNameTextBox.DataBindings.Add("Text", TheApp.Settings, "UnpackPackagePathFolderOrFileName", False, DataSourceUpdateMode.OnValidation)
@@ -83,33 +89,39 @@ Public Class UnpackUserControl
 		Me.LogFileCheckBox.DataBindings.Add("Checked", TheApp.Settings, "UnpackLogFileIsChecked", False, DataSourceUpdateMode.OnPropertyChanged)
 	End Sub
 
-	' Do not need Free() because this widget is destroyed only on program exit.
-	'Protected Overrides Sub Free()
-	'	RemoveHandler Me.PackagePathFileNameTextBox.DataBindings("Text").Parse, AddressOf FileManager.ParsePathFileName
-	'	RemoveHandler Me.OutputPathTextBox.DataBindings("Text").Parse, AddressOf FileManager.ParsePathFileName
-	'	RemoveHandler TheApp.Settings.PropertyChanged, AddressOf AppSettings_PropertyChanged
-	'	RemoveHandler TheApp.Unpacker.ProgressChanged, AddressOf Me.ListerBackgroundWorker_ProgressChanged
-	'	RemoveHandler TheApp.Unpacker.RunWorkerCompleted, AddressOf Me.ListerBackgroundWorker_RunWorkerCompleted
-	'	RemoveHandler TheApp.Unpacker.ProgressChanged, AddressOf Me.UnpackerBackgroundWorker_ProgressChanged
-	'	RemoveHandler TheApp.Unpacker.RunWorkerCompleted, AddressOf Me.UnpackerBackgroundWorker_RunWorkerCompleted
+	Protected Overrides Sub Free()
+		MyBase.Free()
 
-	'	Me.UnpackComboBox.DataBindings.Clear()
-	'	Me.PackagePathFileNameTextBox.DataBindings.Clear()
+		' [04-Feb-2026] Because Me.DesignMode is unreliable in nested widgets, must do this check to prevent a crash.
+		If Not Me.InitHasBeenCalled OrElse TheApp Is Nothing Then
+			Exit Sub
+		End If
 
-	'	Me.OutputPathTextBox.DataBindings.Clear()
-	'	Me.OutputSamePathTextBox.DataBindings.Clear()
-	'	Me.OutputSubfolderTextBox.DataBindings.Clear()
+		RemoveHandler Me.PackagePathFileNameTextBox.DataBindings("Text").Parse, AddressOf FileManager.ParsePathFileName
+		RemoveHandler Me.OutputPathTextBox.DataBindings("Text").Parse, AddressOf FileManager.ParsePathFileName
+		RemoveHandler TheApp.Settings.PropertyChanged, AddressOf AppSettings_PropertyChanged
+		RemoveHandler TheApp.Unpacker.ProgressChanged, AddressOf Me.ListerBackgroundWorker_ProgressChanged
+		RemoveHandler TheApp.Unpacker.RunWorkerCompleted, AddressOf Me.ListerBackgroundWorker_RunWorkerCompleted
+		RemoveHandler TheApp.Unpacker.ProgressChanged, AddressOf Me.UnpackerBackgroundWorker_ProgressChanged
+		RemoveHandler TheApp.Unpacker.RunWorkerCompleted, AddressOf Me.UnpackerBackgroundWorker_RunWorkerCompleted
 
-	'	Me.FreeUnpackerOptions()
+		Me.UnpackModeComboBox.DataBindings.Clear()
+		Me.PackagePathFileNameTextBox.DataBindings.Clear()
 
-	'	Me.UnpackedFilesComboBox.DataSource = Nothing
-	'End Sub
+		Me.OutputPathTextBox.DataBindings.Clear()
+		Me.OutputSamePathTextBox.DataBindings.Clear()
+		Me.OutputSubfolderTextBox.DataBindings.Clear()
 
-	'Private Sub FreeUnpackerOptions()
-	'	Me.FolderForEachPackageCheckBox.DataBindings.Clear()
-	'	Me.KeepFullPathCheckBox.DataBindings.Clear()
-	'	Me.LogFileCheckBox.DataBindings.Clear()
-	'End Sub
+		Me.FreeUnpackerOptions()
+
+		Me.UnpackedFilesComboBox.DataSource = Nothing
+	End Sub
+
+	Private Sub FreeUnpackerOptions()
+		Me.FolderForEachPackageCheckBox.DataBindings.Clear()
+		Me.KeepFullPathCheckBox.DataBindings.Clear()
+		Me.LogFileCheckBox.DataBindings.Clear()
+	End Sub
 
 #End Region
 
@@ -742,9 +754,10 @@ Public Class UnpackUserControl
 				'	Exit Try
 			End If
 
-			Me.UnpackModeComboBox.DisplayMember = "Value"
-			Me.UnpackModeComboBox.ValueMember = "Key"
+			'NOTE: For ComboUserControl, must assign DataSource before ValueMember.
 			Me.UnpackModeComboBox.DataSource = TheApp.Unpacker.UnpackModes
+			Me.UnpackModeComboBox.ValueMember = "Key"
+			Me.UnpackModeComboBox.DisplayMember = "Value"
 			Me.UnpackModeComboBox.DataBindings.Add("SelectedIndex", TheApp.Settings, "UnpackModeIndex", False, DataSourceUpdateMode.OnPropertyChanged)
 
 			Me.theUnpackModeIndexIsBeingChangedByMe = True
@@ -771,9 +784,10 @@ Public Class UnpackUserControl
 			'TODO: Delete this line when game addons folder option is implemented.
 			anEnumList.RemoveAt(UnpackOutputPathOptions.GameAddonsFolder)
 
-			Me.OutputPathComboBox.DisplayMember = "Value"
-			Me.OutputPathComboBox.ValueMember = "Key"
+			'NOTE: For ComboUserControl, must assign DataSource before ValueMember.
 			Me.OutputPathComboBox.DataSource = anEnumList
+			Me.OutputPathComboBox.ValueMember = "Key"
+			Me.OutputPathComboBox.DisplayMember = "Value"
 			Me.OutputPathComboBox.DataBindings.Add("SelectedValue", TheApp.Settings, "UnpackOutputFolderOption", False, DataSourceUpdateMode.OnPropertyChanged)
 
 			' Do not use this line because it will override the value automatically assigned by the data bindings above.

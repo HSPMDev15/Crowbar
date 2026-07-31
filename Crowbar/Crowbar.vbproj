@@ -107,6 +107,7 @@
     <Compile Include="Core\- Application\SingleInstanceEventArgs.vb" />
     <Compile Include="Core\- AppThemes\AppTheme.vb" />
     <Compile Include="Core\- AppThemes\GroupBoxTheme.vb" />
+    <Compile Include="Core\- AppThemes\ListViewTheme.vb" />
     <Compile Include="Core\- AppThemes\DataGridViewTheme.vb" />
     <Compile Include="Core\- AppThemes\ComboUserControlTheme.vb" />
     <Compile Include="Core\- AppThemes\SplitContainerTheme.vb" />
@@ -610,6 +611,9 @@
     </Compile>
     <Compile Include="Widgets\- General\Helpers\FileDragDropHelper.vb" />
     <Compile Include="Widgets\- General\GroupBoxEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\- General\ListViewEx.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Widgets\- General\PanelEx.vb">
