@@ -26,18 +26,18 @@ Partial Class ZombiePanicSourceTagsUserControl
 		Me.ObjectiveCheckBox = New CheckBoxEx()
 		Me.HardcoreCheckBox = New CheckBoxEx()
 		Me.CustomCheckBox = New CheckBoxEx()
-		Me.GameModeRadioButton = New System.Windows.Forms.RadioButton()
+		Me.GameModeRadioButton = New Crowbar.RadioButtonEx()
 		Me.GUIsCheckBox = New CheckBoxEx()
 		Me.WeaponsCheckBox = New CheckBoxEx()
 		Me.PropsCheckBox = New CheckBoxEx()
 		Me.CharactersCheckBox = New CheckBoxEx()
-		Me.CustomModelsRadioButton = New System.Windows.Forms.RadioButton()
+		Me.CustomModelsRadioButton = New Crowbar.RadioButtonEx()
 		Me.SoundPackCheckBox = New CheckBoxEx()
 		Me.ModelPackCheckBox = New CheckBoxEx()
 		Me.WeaponSoundsCheckBox = New CheckBoxEx()
 		Me.CharacterSoundsCheckBox = New CheckBoxEx()
-		Me.CustomSoundsRadioButton = New System.Windows.Forms.RadioButton()
-		Me.MiscellaneousRadioButton = New System.Windows.Forms.RadioButton()
+		Me.CustomSoundsRadioButton = New Crowbar.RadioButtonEx()
+		Me.MiscellaneousRadioButton = New Crowbar.RadioButtonEx()
 		Me.GameModePanel = New PanelEx()
 		Me.CustomModelsPanel = New PanelEx()
 		Me.CustomSoundsPanel = New PanelEx()
@@ -296,20 +296,20 @@ Partial Class ZombiePanicSourceTagsUserControl
 	Friend WithEvents HardcoreCheckBox As CheckBoxEx
 	Friend WithEvents ObjectiveCheckBox As CheckBoxEx
 	Friend WithEvents SurvivalCheckBox As CheckBoxEx
-	Friend WithEvents GameModeRadioButton As RadioButton
+	Friend WithEvents GameModeRadioButton As RadioButtonEx
 	Friend WithEvents GUIsCheckBox As CheckBoxEx
 	Friend WithEvents WeaponsCheckBox As CheckBoxEx
 	Friend WithEvents PropsCheckBox As CheckBoxEx
 	Friend WithEvents CharactersCheckBox As CheckBoxEx
-	Friend WithEvents CustomModelsRadioButton As RadioButton
+	Friend WithEvents CustomModelsRadioButton As RadioButtonEx
 	Friend WithEvents SoundPackCheckBox As CheckBoxEx
 	Friend WithEvents ModelPackCheckBox As CheckBoxEx
 	Friend WithEvents WeaponSoundsCheckBox As CheckBoxEx
 	Friend WithEvents CharacterSoundsCheckBox As CheckBoxEx
-	Friend WithEvents CustomSoundsRadioButton As RadioButton
-	Friend WithEvents MiscellaneousRadioButton As RadioButton
-	Friend WithEvents GameModePanel As Panel
-	Friend WithEvents CustomModelsPanel As Panel
-	Friend WithEvents CustomSoundsPanel As Panel
-	Friend WithEvents MiscellaneousPanel As Panel
+	Friend WithEvents CustomSoundsRadioButton As RadioButtonEx
+	Friend WithEvents MiscellaneousRadioButton As RadioButtonEx
+	Friend WithEvents GameModePanel As PanelEx
+	Friend WithEvents CustomModelsPanel As PanelEx
+	Friend WithEvents CustomSoundsPanel As PanelEx
+	Friend WithEvents MiscellaneousPanel As PanelEx
 End Class

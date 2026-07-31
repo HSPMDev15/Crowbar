@@ -27,7 +27,7 @@ Partial Class SetUpGamesUserControl
 		Me.BrowseForMappingToolPathFileNameButton = New Crowbar.ButtonEx()
 		Me.MappingToolPathFileNameTextBox = New Crowbar.RichTextBoxEx()
 		Me.MappingToolLabel = New System.Windows.Forms.Label()
-		Me.GameAppOptionsRichTextBoxExIncorrectTextSpacingWorkaroundPanel = New System.Windows.Forms.Panel()
+		Me.GameAppOptionsRichTextBoxExIncorrectTextSpacingWorkaroundPanel = New Crowbar.PanelEx()
 		Me.GameAppOptionsTextBox = New Crowbar.RichTextBoxEx()
 		Me.ExecutableOptionsLabel = New System.Windows.Forms.Label()
 		Me.ClearGameAppOptionsButton = New Crowbar.ButtonEx()
@@ -690,6 +690,6 @@ Partial Class SetUpGamesUserControl
 	Friend WithEvents GoBackButton As ButtonEx
 	Friend WithEvents ToolTip1 As ToolTip
 	Friend WithEvents Panel1 As PanelEx
-	Friend WithEvents GameAppOptionsRichTextBoxExIncorrectTextSpacingWorkaroundPanel As Panel
+	Friend WithEvents GameAppOptionsRichTextBoxExIncorrectTextSpacingWorkaroundPanel As PanelEx
 	Friend WithEvents GameSetupComboUserControl As ComboUserControl
 End Class

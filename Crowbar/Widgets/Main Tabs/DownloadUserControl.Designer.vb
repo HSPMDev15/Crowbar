@@ -48,7 +48,7 @@ Partial Class DownloadUserControl
 		Me.GotoDownloadedItemButton = New Crowbar.ButtonEx()
 		Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
 		Me.DownloadUserControlFillPanel = New Crowbar.PanelEx()
-		Me.Options_LogSplitContainer = New System.Windows.Forms.SplitContainer()
+		Me.Options_LogSplitContainer = New Crowbar.SplitContainerEx()
 		Me.DownloadButtonsPanel = New Crowbar.PanelEx()
 		Me.PostDownloadPanel = New Crowbar.PanelEx()
 		Me.UseInUnpackButton = New Crowbar.ButtonEx()
@@ -508,7 +508,7 @@ Partial Class DownloadUserControl
 	Friend WithEvents ConvertToExpectedFileOrFolderCheckBox As CheckBoxEx
 	Friend WithEvents ToolTip1 As ToolTip
 	Friend WithEvents Timer1 As Timer
-	Friend WithEvents Options_LogSplitContainer As SplitContainer
+	Friend WithEvents Options_LogSplitContainer As SplitContainerEx
 	Friend WithEvents UseInUnpackButton As ButtonEx
 	Friend WithEvents OutputPathComboBox As ComboUserControl
 	Friend WithEvents DownloadUserControlFillPanel As PanelEx

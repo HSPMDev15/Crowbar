@@ -34,7 +34,7 @@ Partial Class ViewUserControl
 		Me.GotoMdlFileButton = New Crowbar.ButtonEx()
 		Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
 		Me.GroupBox1 = New Crowbar.GroupBoxEx()
-		Me.Panel1 = New System.Windows.Forms.Panel()
+		Me.Panel1 = New Crowbar.PanelEx()
 		Me.InfoRichTextBox = New Crowbar.RichTextBoxEx()
 		Me.GameLabel = New System.Windows.Forms.Label()
 		Me.GameSetupComboBox = New Crowbar.ComboUserControl()
@@ -363,5 +363,5 @@ Partial Class ViewUserControl
 	Friend WithEvents OverrideMdlVersionLabel As Label
 	Friend WithEvents OverrideMdlVersionComboUserControl As ComboUserControl
 	Friend WithEvents RefreshButton As ButtonEx
-	Friend WithEvents Panel1 As Panel
+	Friend WithEvents Panel1 As PanelEx
 End Class

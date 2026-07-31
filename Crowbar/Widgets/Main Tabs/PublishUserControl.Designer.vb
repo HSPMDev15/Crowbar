@@ -38,17 +38,17 @@ Partial Class PublishUserControl
 		Me.AppIdComboBox = New Crowbar.ComboUserControl()
 		Me.PublishRequiresSteamLabel = New System.Windows.Forms.Label()
 		Me.OpenSteamSubscriberAgreementButton = New Crowbar.ButtonEx()
-		Me.MiddleBottomSplitContainer = New System.Windows.Forms.SplitContainer()
+		Me.MiddleBottomSplitContainer = New Crowbar.SplitContainerEx()
 		Me.ItemGroupBox = New Crowbar.GroupBoxEx()
-		Me.ItemTagsSplitContainer = New System.Windows.Forms.SplitContainer()
+		Me.ItemTagsSplitContainer = New Crowbar.SplitContainerEx()
 		Me.PanelEx1 = New Crowbar.PanelEx()
-		Me.DescriptionChangeNoteSplitContainer = New System.Windows.Forms.SplitContainer()
-		Me.Panel1 = New System.Windows.Forms.Panel()
+		Me.DescriptionChangeNoteSplitContainer = New Crowbar.SplitContainerEx()
+		Me.Panel1 = New Crowbar.PanelEx()
 		Me.ItemDescriptionTextBox = New Crowbar.RichTextBoxEx()
 		Me.ItemDescriptionTopPanel = New Crowbar.PanelEx()
 		Me.ToggleWordWrapForDescriptionCheckBox = New Crowbar.CheckBoxEx()
 		Me.ItemDescriptionLabel = New System.Windows.Forms.Label()
-		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.Panel3 = New Crowbar.PanelEx()
 		Me.ItemChangeNoteTextBox = New Crowbar.RichTextBoxEx()
 		Me.ItemChangeNoteTopPanel = New Crowbar.PanelEx()
 		Me.ToggleWordWrapForChangeNotePanel = New Crowbar.PanelEx()
@@ -59,10 +59,10 @@ Partial Class PublishUserControl
 		Me.ItemIDTextBox = New Crowbar.RichTextBoxEx()
 		Me.ItemOwnerTextBox = New Crowbar.RichTextBoxEx()
 		Me.ItemTitleLabel = New System.Windows.Forms.Label()
-		Me.Panel4 = New System.Windows.Forms.Panel()
+		Me.Panel4 = New Crowbar.PanelEx()
 		Me.ItemTitleTextBox = New Crowbar.RichTextBoxEx()
 		Me.ItemBottomPanel = New Crowbar.PanelEx()
-		Me.Panel2 = New System.Windows.Forms.Panel()
+		Me.Panel2 = New Crowbar.PanelEx()
 		Me.ItemPreviewImageLabel = New System.Windows.Forms.Label()
 		Me.ItemContentFolderOrFileLabel = New System.Windows.Forms.Label()
 		Me.ItemPreviewImagePathFileNameTextBox = New Crowbar.RichTextBoxEx()
@@ -1050,9 +1050,9 @@ Partial Class PublishUserControl
 	Friend WithEvents OpenSteamSubscriberAgreementButton As ButtonEx
     Friend WithEvents AppIdComboBox As ComboUserControl
     Friend WithEvents GameLabel As Label
-	Friend WithEvents MiddleBottomSplitContainer As SplitContainer
+	Friend WithEvents MiddleBottomSplitContainer As SplitContainerEx
 	Friend WithEvents ItemGroupBox As GroupBoxEx
-	Friend WithEvents ItemTagsSplitContainer As SplitContainer
+	Friend WithEvents ItemTagsSplitContainer As SplitContainerEx
 	Friend WithEvents OpenWorkshopPageButton As ButtonEx
 	Friend WithEvents ItemTitleLabel As Label
 	Friend WithEvents DeleteItemButton As ButtonEx
@@ -1068,7 +1068,7 @@ Partial Class PublishUserControl
 	Friend WithEvents ItemUpdatedTextBox As DateTimeTextBoxEx
 	Friend WithEvents ItemContentPathFileNameTextBox As Crowbar.RichTextBoxEx
 	Friend WithEvents ItemContentFolderOrFileLabel As Label
-	Friend WithEvents DescriptionChangeNoteSplitContainer As SplitContainer
+	Friend WithEvents DescriptionChangeNoteSplitContainer As SplitContainerEx
 	Friend WithEvents ItemDescriptionLabel As Label
 	Friend WithEvents ItemDescriptionTextBox As RichTextBoxEx
 	Friend WithEvents ItemChangeNoteLabel As Label
@@ -1106,10 +1106,10 @@ Partial Class PublishUserControl
 	Friend WithEvents ItemDescriptionTopPanel As PanelEx
 	Friend WithEvents ItemChangeNoteTopPanel As PanelEx
 	Friend WithEvents ToggleWordWrapForChangeNotePanel As PanelEx
-	Friend WithEvents Panel1 As Panel
-	Friend WithEvents Panel2 As Panel
-	Friend WithEvents Panel3 As Panel
-	Friend WithEvents Panel4 As Panel
+	Friend WithEvents Panel1 As PanelEx
+	Friend WithEvents Panel2 As PanelEx
+	Friend WithEvents Panel3 As PanelEx
+	Friend WithEvents Panel4 As PanelEx
 	Friend WithEvents PanelEx1 As PanelEx
 	Friend WithEvents ExplanationTextBox As TextBoxEx
 End Class

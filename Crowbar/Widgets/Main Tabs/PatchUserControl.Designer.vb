@@ -73,27 +73,27 @@ Partial Class PatchUserControl
 		Me.PatchableValuesForMultipleMDLsGroupBox = New Crowbar.GroupBoxEx()
 		Me.Button10 = New Crowbar.ButtonEx()
 		Me.GroupBox6 = New Crowbar.GroupBoxEx()
-		Me.DataGridView5 = New System.Windows.Forms.DataGridView()
+		Me.DataGridView5 = New Crowbar.DataGridViewEx()
 		Me.Label14 = New System.Windows.Forms.Label()
 		Me.TextBoxEx7 = New Crowbar.RichTextBoxEx()
 		Me.TextBoxEx8 = New Crowbar.RichTextBoxEx()
 		Me.TextBoxEx9 = New Crowbar.RichTextBoxEx()
 		Me.Label15 = New System.Windows.Forms.Label()
 		Me.GroupBox7 = New Crowbar.GroupBoxEx()
-		Me.DataGridView6 = New System.Windows.Forms.DataGridView()
+		Me.DataGridView6 = New Crowbar.DataGridViewEx()
 		Me.Button12 = New Crowbar.ButtonEx()
 		Me.Button13 = New Crowbar.ButtonEx()
 		Me.Label16 = New System.Windows.Forms.Label()
 		Me.Label17 = New System.Windows.Forms.Label()
 		Me.TextBoxEx10 = New Crowbar.RichTextBoxEx()
 		Me.GroupBox8 = New Crowbar.GroupBoxEx()
-		Me.DataGridView7 = New System.Windows.Forms.DataGridView()
+		Me.DataGridView7 = New Crowbar.DataGridViewEx()
 		Me.Button14 = New Crowbar.ButtonEx()
 		Me.Button15 = New Crowbar.ButtonEx()
 		Me.Button16 = New Crowbar.ButtonEx()
 		Me.Button17 = New Crowbar.ButtonEx()
 		Me.GroupBox9 = New Crowbar.GroupBoxEx()
-		Me.DataGridView8 = New System.Windows.Forms.DataGridView()
+		Me.DataGridView8 = New Crowbar.DataGridViewEx()
 		Me.Button18 = New Crowbar.ButtonEx()
 		Me.Button19 = New Crowbar.ButtonEx()
 		Me.Button20 = New Crowbar.ButtonEx()
@@ -1200,27 +1200,27 @@ Partial Class PatchUserControl
 	Friend WithEvents PatchableValuesForMultipleMDLsGroupBox As GroupBoxEx
 	Friend WithEvents Button10 As ButtonEx
 	Friend WithEvents GroupBox6 As GroupBoxEx
-	Friend WithEvents DataGridView5 As DataGridView
+	Friend WithEvents DataGridView5 As DataGridViewEx
 	Friend WithEvents Label14 As Label
 	Friend WithEvents TextBoxEx7 As Crowbar.RichTextBoxEx
 	Friend WithEvents TextBoxEx8 As Crowbar.RichTextBoxEx
 	Friend WithEvents TextBoxEx9 As Crowbar.RichTextBoxEx
 	Friend WithEvents Label15 As Label
 	Friend WithEvents GroupBox7 As GroupBoxEx
-	Friend WithEvents DataGridView6 As DataGridView
+	Friend WithEvents DataGridView6 As DataGridViewEx
 	Friend WithEvents Button12 As ButtonEx
 	Friend WithEvents Button13 As ButtonEx
 	Friend WithEvents Label16 As Label
 	Friend WithEvents Label17 As Label
 	Friend WithEvents TextBoxEx10 As Crowbar.RichTextBoxEx
 	Friend WithEvents GroupBox8 As GroupBoxEx
-	Friend WithEvents DataGridView7 As DataGridView
+	Friend WithEvents DataGridView7 As DataGridViewEx
 	Friend WithEvents Button14 As ButtonEx
 	Friend WithEvents Button15 As ButtonEx
 	Friend WithEvents Button16 As ButtonEx
 	Friend WithEvents Button17 As ButtonEx
 	Friend WithEvents GroupBox9 As GroupBoxEx
-	Friend WithEvents DataGridView8 As DataGridView
+	Friend WithEvents DataGridView8 As DataGridViewEx
 	Friend WithEvents Button18 As ButtonEx
 	Friend WithEvents Button19 As ButtonEx
 	Friend WithEvents Button20 As ButtonEx
